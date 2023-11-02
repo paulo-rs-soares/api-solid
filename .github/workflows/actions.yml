@@ -23,3 +23,24 @@ jobs:
           cache: maven
       - name: Compilação
         run: mvn -B package --file pom.xml -DskipTests
+
+      - name: Testes
+        run: mvn test
+
+      - name: Resultados
+        uses: mikepenz/action-junit-report@v4
+        if: success() || failure()
+        with:
+          report_paths: 'target/surefire-reports/TEST-*.xml'
+
+  deploy:
+    needs: ["compilacao-e-teste"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy
+        if: github.ref == 'refs/heads/main'
+        env:
+          deploy_url: ${{ secrets.DEPLOY_URL }}
+        run: |
+          curl "$deploy_url"
