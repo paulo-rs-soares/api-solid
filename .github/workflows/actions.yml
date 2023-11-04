@@ -24,14 +24,14 @@ jobs:
       - name: Compilação
         run: mvn -B package --file pom.xml -DskipTests
 
-      #- name: Testes
-        #run: mvn test
+      - name: Testes
+        run: mvn test
 
-      #- name: Resultados
-        #uses: mikepenz/action-junit-report@v4
-        #if: success() || failure()
-        #with:
-          #report_paths: 'target/surefire-reports/TEST-*.xml'
+      - name: Resultados
+        uses: mikepenz/action-junit-report@v4
+        if: success() || failure()
+        with:
+          report_paths: 'target/surefire-reports/TEST-*.xml'
 
   deploy:
     needs: ["compilacao-e-teste"]
