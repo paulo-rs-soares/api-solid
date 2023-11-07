@@ -26,8 +26,8 @@ jobs:
         with:
           postgresql version: '15'
           postgresql db: aula_solid
-          postgresql user: postgresql
-          postgresql passoword: postgresql
+          postgresql user: postgres
+          postgresql passoword: postgres
 
       - name: Compilação
         run: mvn -B package --file pom.xml -DskipTests
