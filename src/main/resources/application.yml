@@ -8,7 +8,7 @@ spring:
     show-sql: true
   datasource:
     url: jdbc:postgresql://localhost:5432/aula_solid
-    password: senac
+    password: postgres
     username: postgres
     driverClassName: org.postgresql.Driver
   mail:
@@ -19,6 +19,6 @@ spring:
             enable: 'true'
           auth: 'true'
     host: smtp.gmail.com
-    username: roberto.fmedeiros62@gmail.com
+    username: silvas.pr@gmail.com
     password: "bbul jtmq otqv evgd"
     port: '587'
