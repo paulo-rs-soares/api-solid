@@ -8,8 +8,8 @@ spring:
     show-sql: true
   datasource:
     url: jdbc:postgresql://localhost:5432/aula_solid
-    password: postgres
-    username: postgres
+    password: QAPJcNUONrgVZupk3ujcWl1nNAG1cVY3
+    username: admin
     driverClassName: org.postgresql.Driver
   mail:
     properties:
